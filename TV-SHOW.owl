@@ -970,7 +970,7 @@
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasBudget"/>
-        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#boundary"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasBudget-i"/>
@@ -998,7 +998,7 @@
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasLength"/>
-        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#boundary"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasLength-i"/>
