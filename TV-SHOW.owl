@@ -1018,7 +1018,7 @@
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasPerson"/>
-        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#proper-part"/>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#immediate-relation"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasSeason"/>
