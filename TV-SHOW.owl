@@ -973,6 +973,10 @@
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <InverseObjectProperties>
+        <ObjectProperty IRI="#hasEpisode"/>
+        <ObjectProperty IRI="#inSeason"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
         <ObjectProperty IRI="#ofTVShow"/>
         <ObjectProperty IRI="#hasSeason"/>
     </InverseObjectProperties>
