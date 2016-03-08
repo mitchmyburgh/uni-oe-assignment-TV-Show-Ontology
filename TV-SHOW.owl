@@ -957,24 +957,32 @@
         <ObjectProperty IRI="#hasSeries"/>
     </EquivalentObjectProperties>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#airsOn"/>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#proper-part"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#character"/>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#proper-part"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasActor"/>
         <ObjectProperty IRI="#hasPerson"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasAirDate"/>
-        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#boundary"/>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#has-quality"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasAirDate-i"/>
-        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#boundary-of"/>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#inherent-in"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasBudget"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#has-quality"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasBudget-i"/>
-        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#boundary-of"/>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#inherent-in"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasCharacter"/>
@@ -997,12 +1005,20 @@
         <ObjectProperty IRI="#hasPerson"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasGenre"/>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#has-quality"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasLength"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#has-quality"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasLength-i"/>
-        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#boundary-of"/>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#inherent-in"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasPerson"/>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#proper-part"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasSeason"/>
@@ -1021,12 +1037,28 @@
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#proper-part-of"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#producedBy"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <ObjectProperty IRI="#ownedBy"/>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#proper-part"/>
     </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#producedBy"/>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#proper-part"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasAirDate-i"/>
+        <ObjectProperty IRI="#hasAirDate"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasBudget-i"/>
+        <ObjectProperty IRI="#hasBudget"/>
+    </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#inSeason"/>
         <ObjectProperty IRI="#hasEpisode"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasLength-i"/>
+        <ObjectProperty IRI="#hasLength"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#ofTVShow"/>
@@ -1037,9 +1069,6 @@
     </SymmetricObjectProperty>
     <TransitiveObjectProperty>
         <ObjectProperty IRI="#hasGenre"/>
-    </TransitiveObjectProperty>
-    <TransitiveObjectProperty>
-        <ObjectProperty IRI="#hasPerson"/>
     </TransitiveObjectProperty>
     <TransitiveObjectProperty>
         <ObjectProperty IRI="#hasSeason"/>
@@ -1184,10 +1213,6 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasLength"/>
         <Class IRI="#Length"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasPerson"/>
-        <Class IRI="#People"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasSeason"/>
