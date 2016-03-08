@@ -1,14 +1,4 @@
 <?xml version="1.0"?>
-
-
-<!DOCTYPE Ontology [
-    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
-    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
-    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-]>
-
-
 <Ontology xmlns="http://www.w3.org/2002/07/owl#"
      xml:base="http://www.semanticweb.org/mybmit001/ontologies/2016/2/tv-show-ontology"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -19,337 +9,338 @@
     <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Declaration>
-        <Class IRI="#ActionAdventure"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Actor"/>
+        <Class IRI="#Infomercials"/>
     </Declaration>
     <Declaration>
         <Class IRI="#AirDate"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Animated"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#AwardShows"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Budget"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Character"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Comedy"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#ComedyDrama"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Company"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#ConceptDeveloper"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Director"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Distribution"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Documentaries"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Drama"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Episode"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#ExecutiveProducer"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Fantasy"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#GameShows"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Genre"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Horror"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Infomercials"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Informational"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#LegalDrama"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Length"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#MedicalDrama"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Miniseries"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Mockumentary"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Network"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#NewsPrograms"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#OnlineRental"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#People"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Pilot"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#PoliceProcedural"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#PoliticalDrama"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Property"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Reality"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Satire"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#ScienceFiction"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#ScriptedEntertainment"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Season"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#SerialDrama"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Sitcom"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#SketchComedy"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#SoapOpera"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Special"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#SpinOff"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Streaming"/>
+        <ObjectProperty IRI="#hasCharacter"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Subject"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#SupernaturalDrama"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#TV"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#TVShow"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#TalentShows"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#TalkShows"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#TeenDrama"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#TelevisionMovies"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#TelevisionNewsMagazine"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Thriller"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#UnscriptedEntertainment"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#airsOn"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#character"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasActor"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasAirDate"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasBudget"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasCharacter"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasConceptDeveloper"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasDirector"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasEpisode"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasEpisode2"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasExecutiveProducer"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasGenre"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasLength"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasPerson"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasProperty"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasSeason"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasSeries"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#inSeason"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#ofTVShow"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#ownedBy"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#producedBy"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#Date"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#Description"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#InitialAirDate"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#RepeatAirDate"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#Synopsis"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#Alphabet"/>
+        <Class IRI="#MedicalDrama"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Apple"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#ArrestedDevelopment"/>
+        <NamedIndividual IRI="#Netflix"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#ArrestedDevelopmentS04"/>
+        <Class IRI="#Genre"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Pilot"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SketchComedy"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#ArrestedDevelopmentS04E01"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#BreakingBad"/>
+        <DataProperty IRI="#RepeatAirDate"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#BreakingBadS01"/>
+        <ObjectProperty IRI="#hasExecutiveProducer"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#BreakingBadS01E01"/>
+        <ObjectProperty IRI="#hasActor"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#DSTV"/>
+        <Class IRI="#Character"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#FullName"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasBudget"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#airsOn"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Drama"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#GameOfThrones"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#GameOfThronesS01"/>
+        <Class IRI="#SpinOff"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#GameOfThronesS01E02"/>
+        <ObjectProperty IRI="#character"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#Google"/>
+        <DataProperty IRI="#Date"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#GooglePlay"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#HBO"/>
+        <NamedIndividual IRI="#Alphabet"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#HBOGo"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#Naspers"/>
+        <NamedIndividual IRI="#BreakingBadS01"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#Netflix"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#OVHD"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#SKY"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#ShowMAX"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#Vidi"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#iTunes"/>
+        <DataProperty IRI="#Description"/>
     </Declaration>
     <Declaration>
         <AnnotationProperty IRI="#AltName"/>
     </Declaration>
     <Declaration>
-        <AnnotationProperty IRI="#FullName"/>
+        <Class IRI="#Miniseries"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TV"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NewsPrograms"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Director"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SupernaturalDrama"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ScriptedEntertainment"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasEpisode2"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GameShows"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TelevisionMovies"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasAirDate"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Length"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasGenre"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Season"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ActionAdventure"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SKY"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Mockumentary"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Vidi"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GooglePlay"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ExecutiveProducer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Streaming"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ArrestedDevelopment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ComedyDrama"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Episode"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Fantasy"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#iTunes"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SoapOpera"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PoliceProcedural"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Satire"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LegalDrama"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#People"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Naspers"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sitcom"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDirector"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ScienceFiction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PoliticalDrama"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#HBO"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Distribution"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GameOfThronesS01"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Animated"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UnscriptedEntertainment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Budget"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ArrestedDevelopmentS04"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ShowMAX"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Network"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OnlineRental"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Google"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GameOfThronesS01E02"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BreakingBad"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#InitialAirDate"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TelevisionNewsMagazine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ConceptDeveloper"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Documentaries"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DSTV"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSeries"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TalkShows"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TalentShows"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TVShow"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Reality"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Thriller"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Property"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#producedBy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TeenDrama"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasEpisode"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Actor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPerson"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSeason"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#ownedBy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Informational"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Company"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasLength"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#ofTVShow"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Horror"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AwardShows"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#inSeason"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SerialDrama"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BreakingBadS01E01"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#OVHD"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Special"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Synopsis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Comedy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasConceptDeveloper"/>
     </Declaration>
     <SubClassOf>
         <Class IRI="#ActionAdventure"/>
@@ -456,7 +447,10 @@
         <Class IRI="#Episode"/>
         <ObjectAllValuesFrom>
             <ObjectProperty IRI="#inSeason"/>
-            <Class IRI="#Season"/>
+            <ObjectUnionOf>
+                <Class IRI="#Season"/>
+                <Class IRI="#TVShow"/>
+            </ObjectUnionOf>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -977,8 +971,8 @@
         <ObjectProperty IRI="#inSeason"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="#ofTVShow"/>
         <ObjectProperty IRI="#hasSeason"/>
+        <ObjectProperty IRI="#ofTVShow"/>
     </InverseObjectProperties>
     <SymmetricObjectProperty>
         <ObjectProperty IRI="#character"/>
@@ -1235,131 +1229,131 @@
     <AnnotationAssertion>
         <AnnotationProperty IRI="#FullName"/>
         <IRI>#AirDate</IRI>
-        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Air Date</Literal>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Air Date</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#AirDate</IRI>
-        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">The air date of the episode, encompassing both initial air date and repeats</Literal>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The air date of the episode, encompassing both initial air date and repeats</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Budget</IRI>
-        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">The budget for the episode</Literal>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The budget for the episode</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#AltName"/>
         <IRI>#Company</IRI>
-        <Literal datatypeIRI="&rdf;PlainLiteral">Business</Literal>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Business</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Company</IRI>
-        <Literal datatypeIRI="&rdf;PlainLiteral">A Company that owns things e.g. Distribution Networks or Studios</Literal>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A Company that owns things e.g. Distribution Networks or Studios</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#AltName"/>
         <IRI>#Distribution</IRI>
-        <Literal datatypeIRI="&rdf;PlainLiteral">Syndication</Literal>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Syndication</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Distribution</IRI>
-        <Literal datatypeIRI="&rdf;PlainLiteral">Distribution method</Literal>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Distribution method</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Episode</IRI>
-        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">An Episode of a specific season of a specific show</Literal>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">An Episode of a specific season of a specific show</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#FullName"/>
         <IRI>#OnlineRental</IRI>
-        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Online Rental</Literal>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Online Rental</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#OnlineRental</IRI>
-        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Online rental services e.g. Google Play and iTunes</Literal>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Online rental services e.g. Google Play and iTunes</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Pilot</IRI>
-        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Pilot episode made to test whether the network will produce the show</Literal>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Pilot episode made to test whether the network will produce the show</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Property</IRI>
-        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Properties</Literal>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Properties</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#AltName"/>
         <IRI>#Season</IRI>
-        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Series</Literal>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Series</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Season</IRI>
-        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">A season of a show, also called a series</Literal>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A season of a show, also called a series</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Special</IRI>
-        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">A special is an episode outside of the usual season, e.g. Christmas Special</Literal>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A special is an episode outside of the usual season, e.g. Christmas Special</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#SpinOff</IRI>
-        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">A spin off is a similar TV Show with the same name in a different setting</Literal>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A spin off is a similar TV Show with the same name in a different setting</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Streaming</IRI>
-        <Literal datatypeIRI="&rdf;PlainLiteral">Distribution via internet streaming e.g. Netflix and Showmax</Literal>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Distribution via internet streaming e.g. Netflix and Showmax</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Subject</IRI>
-        <Literal datatypeIRI="&rdf;PlainLiteral">Person in a real life show - i.e. playing themselves in a documentary</Literal>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Person in a real life show - i.e. playing themselves in a documentary</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#FullName"/>
         <IRI>#TV</IRI>
-        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Television</Literal>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Television</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#TV</IRI>
-        <Literal datatypeIRI="&rdf;PlainLiteral">Distribution by traditional methods, e.g. Satellite or Cable TV</Literal>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Distribution by traditional methods, e.g. Satellite or Cable TV</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#FullName"/>
         <IRI>#TVShow</IRI>
-        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Television Show</Literal>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Television Show</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#TVShow</IRI>
-        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">A TV Show</Literal>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A TV Show</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#hasEpisode</IRI>
-        <Literal datatypeIRI="&rdf;PlainLiteral">Season Has Episode</Literal>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Season Has Episode</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#hasSeason</IRI>
-        <Literal datatypeIRI="&rdf;PlainLiteral">TVShow has a season</Literal>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">TVShow has a season</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#inSeason</IRI>
-        <Literal datatypeIRI="&rdf;PlainLiteral">Episode is in TV Show</Literal>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Episode is in TV Show</Literal>
     </AnnotationAssertion>
 </Ontology>
 
 
 
-<!-- Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net -->
+<!-- Generated by the OWL API (version 4.1.3.20151118-2017) https://github.com/owlcs/owlapi -->
 
