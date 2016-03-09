@@ -255,13 +255,43 @@
         <ObjectProperty IRI="#inSeason"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#nextEpisode"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#nextEpisodes"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#nextSeason"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#nextSeasons"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#ofTVShow"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#ownedBy"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#prevEpisode"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#prevEpisodes"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#prevSeason"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#prevSeasons"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#producedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#temporal-relation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#temporal-relation-i"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#Date"/>
@@ -288,10 +318,40 @@
         <NamedIndividual IRI="#ArrestedDevelopment"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#ArrestedDevelopmentS00E00"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ArrestedDevelopmentS01"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ArrestedDevelopmentS01E01"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ArrestedDevelopmentS01E02"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ArrestedDevelopmentS01E03"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ArrestedDevelopmentS01E04"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ArrestedDevelopmentS01Extras"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ArrestedDevelopmentS02"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ArrestedDevelopmentS03"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#ArrestedDevelopmentS04"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#ArrestedDevelopmentS04E01"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ArrestedDevelopmentS05"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#BreakingBad"/>
@@ -762,12 +822,52 @@
         <NamedIndividual IRI="#ArrestedDevelopment"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Pilot"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS00E00"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Season"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS01"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Episode"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS01E01"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Episode"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS01E02"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Episode"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS01E03"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Episode"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS01E04"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Special"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS01Extras"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Season"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS02"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Season"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS03"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Season"/>
         <NamedIndividual IRI="#ArrestedDevelopmentS04"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Episode"/>
         <NamedIndividual IRI="#ArrestedDevelopmentS04E01"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Season"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS05"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#TVShow"/>
@@ -873,6 +973,121 @@
         <NamedIndividual IRI="#iTunes"/>
     </DifferentIndividuals>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#nextEpisode"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS00E00"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS01E01"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#nextEpisodes"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS00E00"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS01E01"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasEpisode"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS01"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS01Extras"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasEpisode"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS01"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS01E01"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasEpisode"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS01"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS01E03"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasEpisode"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS01"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS01E04"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasEpisode"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS01"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS01E02"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#nextSeason"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS01"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS02"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#nextSeasons"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS01"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS02"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#nextEpisode"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS01E01"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS01E02"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#nextEpisodes"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS01E01"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS01E02"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#nextEpisode"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS01E02"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS01E03"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#nextEpisodes"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS01E02"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS01E03"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#nextEpisode"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS01E03"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS01E04"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#nextEpisodes"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS01E03"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS01E04"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#nextEpisode"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS01E04"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS01Extras"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#nextEpisodes"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS01E04"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS01Extras"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#nextEpisode"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS01Extras"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS04E01"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#nextEpisodes"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS01Extras"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS04E01"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#nextSeason"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS02"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS03"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#nextSeasons"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS02"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS03"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#nextSeason"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS03"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS04"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#nextSeasons"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS03"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS04"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#airsOn"/>
         <NamedIndividual IRI="#ArrestedDevelopmentS04"/>
         <NamedIndividual IRI="#Netflix"/>
@@ -881,6 +1096,16 @@
         <ObjectProperty IRI="#hasEpisode"/>
         <NamedIndividual IRI="#ArrestedDevelopmentS04"/>
         <NamedIndividual IRI="#ArrestedDevelopmentS04E01"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#nextSeason"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS04"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS05"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#nextSeasons"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS04"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS05"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#ofTVShow"/>
@@ -1033,6 +1258,22 @@
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#proper-part-of"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#nextEpisode"/>
+        <ObjectProperty IRI="#temporal-relation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#nextEpisodes"/>
+        <ObjectProperty IRI="#temporal-relation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#nextSeason"/>
+        <ObjectProperty IRI="#temporal-relation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#nextSeasons"/>
+        <ObjectProperty IRI="#temporal-relation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#ofTVShow"/>
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#proper-part-of"/>
     </SubObjectPropertyOf>
@@ -1041,16 +1282,40 @@
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#proper-part"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#prevEpisode"/>
+        <ObjectProperty IRI="#temporal-relation-i"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#prevEpisodes"/>
+        <ObjectProperty IRI="#temporal-relation-i"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#prevSeason"/>
+        <ObjectProperty IRI="#temporal-relation-i"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#prevSeasons"/>
+        <ObjectProperty IRI="#temporal-relation-i"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#producedBy"/>
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#proper-part"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#temporal-relation"/>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#immediate-relation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#temporal-relation-i"/>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#immediate-relation-i"/>
     </SubObjectPropertyOf>
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasAirDate-i"/>
         <ObjectProperty IRI="#hasAirDate"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="#hasBudget-i"/>
         <ObjectProperty IRI="#hasBudget"/>
+        <ObjectProperty IRI="#hasBudget-i"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#inSeason"/>
@@ -1064,9 +1329,41 @@
         <ObjectProperty IRI="#ofTVShow"/>
         <ObjectProperty IRI="#hasSeason"/>
     </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#nextEpisode"/>
+        <ObjectProperty IRI="#prevEpisode"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#nextEpisodes"/>
+        <ObjectProperty IRI="#prevEpisodes"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#nextSeason"/>
+        <ObjectProperty IRI="#prevSeason"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#nextSeasons"/>
+        <ObjectProperty IRI="#prevSeasons"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#temporal-relation-i"/>
+        <ObjectProperty IRI="#temporal-relation"/>
+    </InverseObjectProperties>
     <SymmetricObjectProperty>
         <ObjectProperty IRI="#character"/>
     </SymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#nextEpisode"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#nextSeason"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#prevEpisode"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#prevSeason"/>
+    </AsymmetricObjectProperty>
     <TransitiveObjectProperty>
         <ObjectProperty IRI="#hasGenre"/>
     </TransitiveObjectProperty>
@@ -1074,7 +1371,19 @@
         <ObjectProperty IRI="#hasSeason"/>
     </TransitiveObjectProperty>
     <TransitiveObjectProperty>
+        <ObjectProperty IRI="#nextEpisodes"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#nextSeasons"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
         <ObjectProperty IRI="#ofTVShow"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#prevEpisodes"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#prevSeasons"/>
     </TransitiveObjectProperty>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#airsOn"/>
@@ -1147,6 +1456,22 @@
         <Class IRI="#Episode"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#nextEpisode"/>
+        <Class IRI="#Episode"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#nextEpisodes"/>
+        <Class IRI="#Episode"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#nextSeason"/>
+        <Class IRI="#Season"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#nextSeasons"/>
+        <Class IRI="#Season"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#ofTVShow"/>
         <Class IRI="#Season"/>
     </ObjectPropertyDomain>
@@ -1165,6 +1490,10 @@
             <Class IRI="#Season"/>
             <Class IRI="#TVShow"/>
         </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#temporal-relation-i"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#endurant"/>
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#airsOn"/>
@@ -1226,6 +1555,22 @@
         </ObjectUnionOf>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#nextEpisode"/>
+        <Class IRI="#Episode"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#nextEpisodes"/>
+        <Class IRI="#Episode"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#nextSeason"/>
+        <Class IRI="#Season"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#nextSeasons"/>
+        <Class IRI="#Season"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#ofTVShow"/>
         <Class IRI="#TVShow"/>
     </ObjectPropertyRange>
@@ -1239,6 +1584,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#producedBy"/>
         <Class IRI="#Network"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#temporal-relation-i"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#endurant"/>
     </ObjectPropertyRange>
     <SubObjectPropertyOf>
         <ObjectPropertyChain>
