@@ -23,6 +23,18 @@
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Import>http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl</Import>
+    <Annotation>
+        <AnnotationProperty IRI="#FullName"/>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Television Show Ontology</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">TV Show Ontology for use with classifying and reasoning over television shows. This ontology could be used over a variety of datasets to integrate television show data as well as in conjuction with reasoning and machine learning products for building a recommendation system.
+
+The ontology covers the connections between TV shows and their metadata including but not limited to the people involved in the show, the genre, seasons and specific episodes.
+
+The ontology is based on the DOLCE Foundational Ontology</Literal>
+    </Annotation>
     <Declaration>
         <Class IRI="#ActionAdventure"/>
     </Declaration>
@@ -163,9 +175,6 @@
     </Declaration>
     <Declaration>
         <Class IRI="#Streaming"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Subject"/>
     </Declaration>
     <Declaration>
         <Class IRI="#SupernaturalDrama"/>
@@ -327,6 +336,9 @@
         <ObjectProperty IRI="#spinOffs"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#tVShowEpisode"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#temporal-relation"/>
     </Declaration>
     <Declaration>
@@ -346,6 +358,9 @@
     </Declaration>
     <Declaration>
         <DataProperty IRI="#Synopsis"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#APerson"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Alphabet"/>
@@ -393,6 +408,15 @@
         <NamedIndividual IRI="#ArrestedDevelopmentS05"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#BPerson"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BetterCallSaul"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BobBoberson"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#BreakingBad"/>
     </Declaration>
     <Declaration>
@@ -400,6 +424,9 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#BreakingBadS01E01"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CPerson"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#DSTV"/>
@@ -427,6 +454,9 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#HBOGo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MichaelBluth"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Naspers"/>
@@ -955,10 +985,6 @@
         <Class IRI="#Distribution"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Subject"/>
-        <Class IRI="#People"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#SupernaturalDrama"/>
         <Class IRI="#Drama"/>
     </SubClassOf>
@@ -1055,6 +1081,10 @@
         <Class IRI="#Genre"/>
     </SubClassOf>
     <ClassAssertion>
+        <Class IRI="#ConceptDeveloper"/>
+        <NamedIndividual IRI="#APerson"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Company"/>
         <NamedIndividual IRI="#Alphabet"/>
     </ClassAssertion>
@@ -1064,6 +1094,13 @@
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#TVShow"/>
+        <NamedIndividual IRI="#ArrestedDevelopment"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasGenre"/>
+            <Class IRI="#Mockumentary"/>
+        </ObjectSomeValuesFrom>
         <NamedIndividual IRI="#ArrestedDevelopment"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -1115,6 +1152,18 @@
         <NamedIndividual IRI="#ArrestedDevelopmentS05"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Director"/>
+        <NamedIndividual IRI="#BPerson"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SpinOff"/>
+        <NamedIndividual IRI="#BetterCallSaul"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Actor"/>
+        <NamedIndividual IRI="#BobBoberson"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#TVShow"/>
         <NamedIndividual IRI="#BreakingBad"/>
     </ClassAssertion>
@@ -1134,6 +1183,10 @@
         <NamedIndividual IRI="#BreakingBadS01E01"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#ExecutiveProducer"/>
+        <NamedIndividual IRI="#CPerson"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#TV"/>
         <NamedIndividual IRI="#DSTV"/>
     </ClassAssertion>
@@ -1147,6 +1200,13 @@
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#TVShow"/>
+        <NamedIndividual IRI="#GameOfThrones"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasGenre"/>
+            <Class IRI="#SerialDrama"/>
+        </ObjectSomeValuesFrom>
         <NamedIndividual IRI="#GameOfThrones"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -1172,6 +1232,10 @@
     <ClassAssertion>
         <Class IRI="#Streaming"/>
         <NamedIndividual IRI="#HBOGo"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Character"/>
+        <NamedIndividual IRI="#MichaelBluth"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Company"/>
@@ -1226,9 +1290,39 @@
         <NamedIndividual IRI="#iTunes"/>
     </DifferentIndividuals>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#conceptDeveloperOf"/>
+        <NamedIndividual IRI="#APerson"/>
+        <NamedIndividual IRI="#BreakingBad"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#owns"/>
         <NamedIndividual IRI="#Apple"/>
         <NamedIndividual IRI="#iTunes"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSeason"/>
+        <NamedIndividual IRI="#ArrestedDevelopment"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS02"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSeason"/>
+        <NamedIndividual IRI="#ArrestedDevelopment"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS03"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSeason"/>
+        <NamedIndividual IRI="#ArrestedDevelopment"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS01"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSeason"/>
+        <NamedIndividual IRI="#ArrestedDevelopment"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS04"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSeason"/>
+        <NamedIndividual IRI="#ArrestedDevelopment"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS05"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#isProducedBy"/>
@@ -1396,6 +1490,16 @@
         <NamedIndividual IRI="#ArrestedDevelopmentS04"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#directorOf"/>
+        <NamedIndividual IRI="#BPerson"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS01E01"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#actsIn"/>
+        <NamedIndividual IRI="#BobBoberson"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS01E01"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasSeason"/>
         <NamedIndividual IRI="#BreakingBad"/>
         <NamedIndividual IRI="#BreakingBadS01"/>
@@ -1404,6 +1508,11 @@
         <ObjectProperty IRI="#hasEpisode"/>
         <NamedIndividual IRI="#BreakingBadS01"/>
         <NamedIndividual IRI="#BreakingBadS01E01"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#executiveProducerOf"/>
+        <NamedIndividual IRI="#CPerson"/>
+        <NamedIndividual IRI="#GameOfThrones"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#isOwnedBy"/>
@@ -1456,6 +1565,16 @@
         <NamedIndividual IRI="#HBO"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#character"/>
+        <NamedIndividual IRI="#MichaelBluth"/>
+        <NamedIndividual IRI="#BobBoberson"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#characterIn"/>
+        <NamedIndividual IRI="#MichaelBluth"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS01"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#isOwnedBy"/>
         <NamedIndividual IRI="#ShowMAX"/>
         <NamedIndividual IRI="#Naspers"/>
@@ -1465,6 +1584,16 @@
         <NamedIndividual IRI="#iTunes"/>
         <NamedIndividual IRI="#Apple"/>
     </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Description"/>
+        <NamedIndividual IRI="#BreakingBadS01E01"/>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Hello world</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Synopsis"/>
+        <NamedIndividual IRI="#BreakingBadS01E01"/>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">The plot thickens</Literal>
+    </DataPropertyAssertion>
     <EquivalentObjectProperties>
         <ObjectProperty IRI="#hasSeason"/>
         <ObjectProperty IRI="#hasSeries"/>
@@ -1642,6 +1771,10 @@
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#proper-part-of"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#tVShowEpisode"/>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#proper-part"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#temporal-relation"/>
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#immediate-relation"/>
     </SubObjectPropertyOf>
@@ -1664,6 +1797,10 @@
     <InverseObjectProperties>
         <ObjectProperty IRI="#directorOf"/>
         <ObjectProperty IRI="#hasDirector"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#episodeOfTVShow"/>
+        <ObjectProperty IRI="#tVShowEpisode"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#executiveProducerOf"/>
@@ -1913,10 +2050,7 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasEpisode"/>
-        <ObjectUnionOf>
-            <Class IRI="#Season"/>
-            <Class IRI="#TVShow"/>
-        </ObjectUnionOf>
+        <Class IRI="#Season"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasExecutiveProducer"/>
@@ -2026,6 +2160,10 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#spinOffs"/>
+        <Class IRI="#TVShow"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tVShowEpisode"/>
         <Class IRI="#TVShow"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -2222,6 +2360,10 @@
         <Class IRI="#SpinOff"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#tVShowEpisode"/>
+        <Class IRI="#Episode"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#temporal-relation-i"/>
         <Class IRI="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#endurant"/>
     </ObjectPropertyRange>
@@ -2234,7 +2376,7 @@
             <ObjectProperty IRI="#hasSeason"/>
             <ObjectProperty IRI="#hasEpisode"/>
         </ObjectPropertyChain>
-        <ObjectProperty IRI="#hasEpisode"/>
+        <ObjectProperty IRI="#tVShowEpisode"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectPropertyChain>
@@ -2304,6 +2446,21 @@
     </DataPropertyDomain>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#FullName"/>
+        <IRI>#ActionAdventure</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Action-Adventure</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#AltName"/>
+        <IRI>#Actor</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Performer</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Actor</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Actor in a TV Show</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#FullName"/>
         <IRI>#AirDate</IRI>
         <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Air Date</Literal>
     </AnnotationAssertion>
@@ -2313,9 +2470,24 @@
         <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">The air date of the episode, encompassing both initial air date and repeats</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty IRI="#FullName"/>
+        <IRI>#AwardShows</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Award Shows</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Budget</IRI>
         <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">The budget for the episode</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Character</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Character in a TV Show</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#FullName"/>
+        <IRI>#ComedyDrama</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Comedy-Drama</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#AltName"/>
@@ -2325,22 +2497,92 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Company</IRI>
-        <Literal datatypeIRI="&rdf;PlainLiteral">A Company that owns things e.g. Distribution Networks or Studios</Literal>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">A Company that owns things e.g. Distribution Networks, other Comapnies or Networks</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#FullName"/>
+        <IRI>#ConceptDeveloper</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Concept Developer</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ConceptDeveloper</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">The Concept Developer of a TV Show, creates teh original idea of the TV Show</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Director</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">The Director of a TV Show</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#AltName"/>
         <IRI>#Distribution</IRI>
-        <Literal datatypeIRI="&rdf;PlainLiteral">Syndication</Literal>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Syndication</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Distribution</IRI>
-        <Literal datatypeIRI="&rdf;PlainLiteral">Distribution method</Literal>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Distribution Service</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Episode</IRI>
         <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">An Episode of a specific season of a specific show</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#FullName"/>
+        <IRI>#ExecutiveProducer</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Executive Producer</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ExecutiveProducer</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">The Executive Producer of a TV Show, produces the TV Show</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#AltName"/>
+        <IRI>#Genre</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Style</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Genre</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">The Genre (Style) of teh Televsion Show</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Informational</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Informational TV Shows provides teh viewer with information about a specific topic</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#FullName"/>
+        <IRI>#LegalDrama</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Legal Drama</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Length</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">The play Length of the Episode</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#FullName"/>
+        <IRI>#MedicalDrama</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Medical Drama</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#FullName"/>
+        <IRI>#Network</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Television Network</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Network</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Television Network produces shows</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#FullName"/>
+        <IRI>#NewsPrograms</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">News Programmes</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#FullName"/>
@@ -2354,8 +2596,28 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#People</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">People involved in the making of a TV Show</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Pilot</IRI>
         <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Pilot episode made to test whether the network will produce the show</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#FullName"/>
+        <IRI>#PoliceProcedural</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Police Procedural Drama</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#FullName"/>
+        <IRI>#ScriptedEntertainment</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Scripted Entertainment</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ScriptedEntertainment</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Entertainment shows that are scripted</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#AltName"/>
@@ -2366,6 +2628,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Season</IRI>
         <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">A season of a show, also called a series</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#FullName"/>
+        <IRI>#SketchComedy</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Sketch Comedy</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -2380,12 +2647,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Streaming</IRI>
-        <Literal datatypeIRI="&rdf;PlainLiteral">Distribution via internet streaming e.g. Netflix and Showmax</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Subject</IRI>
-        <Literal datatypeIRI="&rdf;PlainLiteral">Person in a real life show - i.e. playing themselves in a documentary</Literal>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Distribution via internet streaming e.g. Netflix and Showmax</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#FullName"/>
@@ -2395,7 +2657,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#TV</IRI>
-        <Literal datatypeIRI="&rdf;PlainLiteral">Distribution by traditional methods, e.g. Satellite or Cable TV</Literal>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Distribution by traditional methods, e.g. Satellite or Cable TV</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#FullName"/>
@@ -2406,6 +2668,16 @@
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#TVShow</IRI>
         <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">A TV Show</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#FullName"/>
+        <IRI>#TelevisionNewsMagazine</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Television News Magazine</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TelevisionNewsMagazine</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Magazine format television shows like 50/50 and Carte Blanche</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
