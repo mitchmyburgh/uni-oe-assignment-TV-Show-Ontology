@@ -23,10 +23,6 @@
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Import>http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl</Import>
-    <Annotation>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <Literal datatypeIRI="&rdf;PlainLiteral">On airs</Literal>
-    </Annotation>
     <Declaration>
         <Class IRI="#ActionAdventure"/>
     </Declaration>
@@ -409,6 +405,9 @@
         <NamedIndividual IRI="#DSTV"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Fox"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#GameOfThrones"/>
     </Declaration>
     <Declaration>
@@ -558,6 +557,17 @@
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Company"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#owns"/>
+            <ObjectUnionOf>
+                <Class IRI="#Company"/>
+                <Class IRI="#Distribution"/>
+                <Class IRI="#Network"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#ConceptDeveloper"/>
         <Class IRI="#People"/>
     </SubClassOf>
@@ -671,8 +681,15 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Episode"/>
-        <ObjectMinCardinality cardinality="0">
+        <ObjectMinCardinality cardinality="1">
             <ObjectProperty IRI="#nextEpisodes"/>
+            <Class IRI="#Episode"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Episode"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#prevEpisodes"/>
             <Class IRI="#Episode"/>
         </ObjectMinCardinality>
     </SubClassOf>
@@ -694,6 +711,13 @@
         <Class IRI="#Episode"/>
         <ObjectExactCardinality cardinality="1">
             <ObjectProperty IRI="#nextEpisode"/>
+            <Class IRI="#Episode"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Episode"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#prevEpisode"/>
             <Class IRI="#Episode"/>
         </ObjectExactCardinality>
     </SubClassOf>
@@ -772,9 +796,27 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Network"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#owns"/>
+            <Class IRI="#Distribution"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Network"/>
         <ObjectMinCardinality cardinality="0">
             <ObjectProperty IRI="#isOwnedBy"/>
             <Class IRI="#Company"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Network"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#produces"/>
+            <ObjectUnionOf>
+                <Class IRI="#Episode"/>
+                <Class IRI="#Season"/>
+                <Class IRI="#TVShow"/>
+            </ObjectUnionOf>
         </ObjectMinCardinality>
     </SubClassOf>
     <SubClassOf>
@@ -851,8 +893,15 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Season"/>
-        <ObjectMinCardinality cardinality="0">
+        <ObjectMinCardinality cardinality="1">
             <ObjectProperty IRI="#nextSeasons"/>
+            <Class IRI="#Season"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Season"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#prevSeasons"/>
             <Class IRI="#Season"/>
         </ObjectMinCardinality>
     </SubClassOf>
@@ -860,6 +909,13 @@
         <Class IRI="#Season"/>
         <ObjectExactCardinality cardinality="1">
             <ObjectProperty IRI="#nextSeason"/>
+            <Class IRI="#Season"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Season"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#prevSeason"/>
             <Class IRI="#Season"/>
         </ObjectExactCardinality>
     </SubClassOf>
@@ -933,6 +989,13 @@
         <ObjectAllValuesFrom>
             <ObjectProperty IRI="#hasSeason"/>
             <Class IRI="#Season"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TVShow"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#spinOffs"/>
+            <Class IRI="#SpinOff"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -1075,6 +1138,14 @@
         <NamedIndividual IRI="#DSTV"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Company"/>
+        <NamedIndividual IRI="#Fox"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Network"/>
+        <NamedIndividual IRI="#Fox"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#TVShow"/>
         <NamedIndividual IRI="#GameOfThrones"/>
     </ClassAssertion>
@@ -1155,6 +1226,16 @@
         <NamedIndividual IRI="#iTunes"/>
     </DifferentIndividuals>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#owns"/>
+        <NamedIndividual IRI="#Apple"/>
+        <NamedIndividual IRI="#iTunes"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isProducedBy"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS00E00"/>
+        <NamedIndividual IRI="#Fox"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#nextEpisode"/>
         <NamedIndividual IRI="#ArrestedDevelopmentS00E00"/>
         <NamedIndividual IRI="#ArrestedDevelopmentS01E01"/>
@@ -1188,6 +1269,11 @@
         <ObjectProperty IRI="#hasEpisode"/>
         <NamedIndividual IRI="#ArrestedDevelopmentS01"/>
         <NamedIndividual IRI="#ArrestedDevelopmentS01E02"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isProducedBy"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS01"/>
+        <NamedIndividual IRI="#Fox"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#nextSeason"/>
@@ -1250,6 +1336,11 @@
         <NamedIndividual IRI="#ArrestedDevelopmentS04E01"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isProducedBy"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS02"/>
+        <NamedIndividual IRI="#Fox"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#nextSeason"/>
         <NamedIndividual IRI="#ArrestedDevelopmentS02"/>
         <NamedIndividual IRI="#ArrestedDevelopmentS03"/>
@@ -1258,6 +1349,11 @@
         <ObjectProperty IRI="#nextSeasons"/>
         <NamedIndividual IRI="#ArrestedDevelopmentS02"/>
         <NamedIndividual IRI="#ArrestedDevelopmentS03"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isProducedBy"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS03"/>
+        <NamedIndividual IRI="#Fox"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#nextSeason"/>
@@ -1280,6 +1376,11 @@
         <NamedIndividual IRI="#ArrestedDevelopmentS04E01"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isProducedBy"/>
+        <NamedIndividual IRI="#ArrestedDevelopmentS04"/>
+        <NamedIndividual IRI="#Netflix"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#nextSeason"/>
         <NamedIndividual IRI="#ArrestedDevelopmentS04"/>
         <NamedIndividual IRI="#ArrestedDevelopmentS05"/>
@@ -1288,11 +1389,6 @@
         <ObjectProperty IRI="#nextSeasons"/>
         <NamedIndividual IRI="#ArrestedDevelopmentS04"/>
         <NamedIndividual IRI="#ArrestedDevelopmentS05"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#ofTVShow"/>
-        <NamedIndividual IRI="#ArrestedDevelopmentS04"/>
-        <NamedIndividual IRI="#ArrestedDevelopment"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#inSeason"/>
@@ -1340,9 +1436,19 @@
         <NamedIndividual IRI="#Alphabet"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#owns"/>
+        <NamedIndividual IRI="#Google"/>
+        <NamedIndividual IRI="#GooglePlay"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#isOwnedBy"/>
         <NamedIndividual IRI="#GooglePlay"/>
         <NamedIndividual IRI="#Google"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#produces"/>
+        <NamedIndividual IRI="#HBO"/>
+        <NamedIndividual IRI="#GameOfThrones"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#isOwnedBy"/>
@@ -1544,16 +1650,16 @@
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#immediate-relation-i"/>
     </SubObjectPropertyOf>
     <InverseObjectProperties>
-        <ObjectProperty IRI="#actsIn"/>
         <ObjectProperty IRI="#hasActor"/>
+        <ObjectProperty IRI="#actsIn"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="#characterIn"/>
         <ObjectProperty IRI="#hasCharacter"/>
+        <ObjectProperty IRI="#characterIn"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="#conceptDeveloperOf"/>
         <ObjectProperty IRI="#hasConceptDeveloper"/>
+        <ObjectProperty IRI="#conceptDeveloperOf"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#directorOf"/>
@@ -1588,6 +1694,14 @@
         <ObjectProperty IRI="#hasSeason"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
+        <ObjectProperty IRI="#owns"/>
+        <ObjectProperty IRI="#isOwnedBy"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#produces"/>
+        <ObjectProperty IRI="#isProducedBy"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
         <ObjectProperty IRI="#prevEpisode"/>
         <ObjectProperty IRI="#nextEpisode"/>
     </InverseObjectProperties>
@@ -1604,8 +1718,8 @@
         <ObjectProperty IRI="#prevSeasons"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="#spinOffs"/>
         <ObjectProperty IRI="#spinOffOf"/>
+        <ObjectProperty IRI="#spinOffs"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#temporal-relation-i"/>
@@ -1706,6 +1820,9 @@
     </TransitiveObjectProperty>
     <TransitiveObjectProperty>
         <ObjectProperty IRI="#nextSeasons"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#owns"/>
     </TransitiveObjectProperty>
     <TransitiveObjectProperty>
         <ObjectProperty IRI="#prevEpisodes"/>
@@ -1877,6 +1994,13 @@
         <Class IRI="#Season"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#owns"/>
+        <ObjectUnionOf>
+            <Class IRI="#Company"/>
+            <Class IRI="#Network"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#prevEpisode"/>
         <Class IRI="#Episode"/>
     </ObjectPropertyDomain>
@@ -1891,6 +2015,10 @@
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#prevSeasons"/>
         <Class IRI="#Season"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#produces"/>
+        <Class IRI="#Network"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#spinOffOf"/>
@@ -2054,6 +2182,14 @@
         <Class IRI="#TVShow"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#owns"/>
+        <ObjectUnionOf>
+            <Class IRI="#Company"/>
+            <Class IRI="#Distribution"/>
+            <Class IRI="#Network"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#prevEpisode"/>
         <Class IRI="#Episode"/>
     </ObjectPropertyRange>
@@ -2068,6 +2204,14 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#prevSeasons"/>
         <Class IRI="#Season"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#produces"/>
+        <ObjectUnionOf>
+            <Class IRI="#Episode"/>
+            <Class IRI="#Season"/>
+            <Class IRI="#TVShow"/>
+        </ObjectUnionOf>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#spinOffOf"/>
@@ -2102,6 +2246,13 @@
     <SubObjectPropertyOf>
         <ObjectPropertyChain>
             <ObjectProperty IRI="#inSeason"/>
+            <ObjectProperty IRI="#isProducedBy"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="#isProducedBy"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty IRI="#inSeason"/>
             <ObjectProperty IRI="#ofTVShow"/>
         </ObjectPropertyChain>
         <ObjectProperty IRI="#episodeOfTVShow"/>
@@ -2113,6 +2264,14 @@
             <ObjectProperty IRI="#airsOn"/>
         </ObjectPropertyChain>
         <ObjectProperty IRI="#airsOn"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty IRI="#inSeason"/>
+            <ObjectProperty IRI="#ofTVShow"/>
+            <ObjectProperty IRI="#isProducedBy"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="#isProducedBy"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectPropertyChain>
