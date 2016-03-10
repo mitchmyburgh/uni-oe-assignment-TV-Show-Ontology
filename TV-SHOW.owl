@@ -129,7 +129,7 @@ The ontology is based on the DOLCE Foundational Ontology</Literal>
         <Class IRI="#OnlineRental"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#People"/>
+        <Class IRI="#Person"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Pilot"/>
@@ -491,7 +491,7 @@ The ontology is based on the DOLCE Foundational Ontology</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Actor"/>
-        <Class IRI="#People"/>
+        <Class IRI="#Person"/>
     </SubClassOf>
     <SubClassOf>
         <Annotation>
@@ -543,7 +543,7 @@ The ontology is based on the DOLCE Foundational Ontology</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Character"/>
-        <Class IRI="#People"/>
+        <Class IRI="#Person"/>
     </SubClassOf>
     <SubClassOf>
         <Annotation>
@@ -599,7 +599,7 @@ The ontology is based on the DOLCE Foundational Ontology</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ConceptDeveloper"/>
-        <Class IRI="#People"/>
+        <Class IRI="#Person"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ConceptDeveloper"/>
@@ -610,7 +610,7 @@ The ontology is based on the DOLCE Foundational Ontology</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Director"/>
-        <Class IRI="#People"/>
+        <Class IRI="#Person"/>
     </SubClassOf>
     <SubClassOf>
         <Annotation>
@@ -767,7 +767,7 @@ The ontology is based on the DOLCE Foundational Ontology</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ExecutiveProducer"/>
-        <Class IRI="#People"/>
+        <Class IRI="#Person"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ExecutiveProducer"/>
@@ -858,7 +858,7 @@ The ontology is based on the DOLCE Foundational Ontology</Literal>
         <Class IRI="#Distribution"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#People"/>
+        <Class IRI="#Person"/>
         <Class IRI="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#physical-object"/>
     </SubClassOf>
     <SubClassOf>
@@ -1080,6 +1080,16 @@ The ontology is based on the DOLCE Foundational Ontology</Literal>
         <Class IRI="#UnscriptedEntertainment"/>
         <Class IRI="#Genre"/>
     </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#AirDate"/>
+        <Class IRI="#Budget"/>
+        <Class IRI="#Genre"/>
+        <Class IRI="#Length"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#AirDate"/>
+        <Class IRI="#Person"/>
+    </DisjointClasses>
     <ClassAssertion>
         <Class IRI="#ConceptDeveloper"/>
         <NamedIndividual IRI="#APerson"/>
@@ -1587,12 +1597,12 @@ The ontology is based on the DOLCE Foundational Ontology</Literal>
     <DataPropertyAssertion>
         <DataProperty IRI="#Description"/>
         <NamedIndividual IRI="#BreakingBadS01E01"/>
-        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Hello world</Literal>
+        <Literal datatypeIRI="&xsd;string">Hello world</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#Synopsis"/>
         <NamedIndividual IRI="#BreakingBadS01E01"/>
-        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">The plot thickens</Literal>
+        <Literal datatypeIRI="&xsd;string">The plot thickens</Literal>
     </DataPropertyAssertion>
     <EquivalentObjectProperties>
         <ObjectProperty IRI="#hasSeason"/>
@@ -2089,7 +2099,7 @@ The ontology is based on the DOLCE Foundational Ontology</Literal>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#involvedIn"/>
-        <Class IRI="#People"/>
+        <Class IRI="#Person"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isOwnedBy"/>
@@ -2271,7 +2281,7 @@ The ontology is based on the DOLCE Foundational Ontology</Literal>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasPerson"/>
-        <Class IRI="#People"/>
+        <Class IRI="#Person"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasSeason"/>
@@ -2540,6 +2550,11 @@ The ontology is based on the DOLCE Foundational Ontology</Literal>
         <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">The Executive Producer of a TV Show, produces the TV Show</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty IRI="#FullName"/>
+        <IRI>#GameShows</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Game Shows</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty IRI="#AltName"/>
         <IRI>#Genre</IRI>
         <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Style</Literal>
@@ -2596,7 +2611,7 @@ The ontology is based on the DOLCE Foundational Ontology</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#People</IRI>
+        <IRI>#Person</IRI>
         <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">People involved in the making of a TV Show</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
@@ -2608,6 +2623,16 @@ The ontology is based on the DOLCE Foundational Ontology</Literal>
         <AnnotationProperty IRI="#FullName"/>
         <IRI>#PoliceProcedural</IRI>
         <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Police Procedural Drama</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#FullName"/>
+        <IRI>#PoliticalDrama</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Political Drama</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#FullName"/>
+        <IRI>#ScienceFiction</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Science Fiction</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#FullName"/>
@@ -2631,8 +2656,18 @@ The ontology is based on the DOLCE Foundational Ontology</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#FullName"/>
+        <IRI>#SerialDrama</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Serial Drama</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#FullName"/>
         <IRI>#SketchComedy</IRI>
         <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Sketch Comedy</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#FullName"/>
+        <IRI>#SoapOpera</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Soap Opera</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -2648,6 +2683,11 @@ The ontology is based on the DOLCE Foundational Ontology</Literal>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Streaming</IRI>
         <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Distribution via internet streaming e.g. Netflix and Showmax</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#FullName"/>
+        <IRI>#SupernaturalDrama</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Supernatural Drama</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#FullName"/>
@@ -2671,6 +2711,26 @@ The ontology is based on the DOLCE Foundational Ontology</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#FullName"/>
+        <IRI>#TalentShows</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Talent Shows</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#FullName"/>
+        <IRI>#TalkShows</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Talk Shows</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#FullName"/>
+        <IRI>#TeenDrama</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Teen Drama</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#FullName"/>
+        <IRI>#TelevisionMovies</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Television Movies</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#FullName"/>
         <IRI>#TelevisionNewsMagazine</IRI>
         <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Television News Magazine</Literal>
     </AnnotationAssertion>
@@ -2680,14 +2740,126 @@ The ontology is based on the DOLCE Foundational Ontology</Literal>
         <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Magazine format television shows like 50/50 and Carte Blanche</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty IRI="#FullName"/>
+        <IRI>#UnscriptedEntertainment</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Unscripted Entertainment</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#UnscriptedEntertainment</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Shows that are unscripted</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#actsIn</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Relation to show which shows actor acts in</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#airs</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Shows that tv show is aired on a distribution platform/ part of a distribution platform</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#airsOn</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">An Episode or Season or TV Show airs on a type of Distribution Network, e.g. Arrested Development airsOn Netflix.
+
+airsOn also makes use of property chaining to infer that if a TV Show airsOn a Distribution then its components (Episodes and Seasons) also airOn the same Distribution.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#character</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">A symmetric relation connecting Actors and Characters. Characters are related with Actors via chracter and vice verse.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#characterIn</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Relation that shows that a character is part of an episode</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#conceptDeveloperOf</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Relation to show the concept developer of a tv show</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#directorOf</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Shows the director of an episode</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#episodeOfTVShow</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Shows that episode is part of TV show</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#executiveProducerOf</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Shows the executive producer of a TV show</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasActor</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">An Episode has an Actor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasAirDate-i</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">The inverse of hasAirDate - connecting an AirDate with an Episode</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasBudget-i</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">The inverse of hasBudget - connecting a Budget with an Episode</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasCharacter</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">An Episode has a Character</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasConceptDeveloper</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">A TV Show has a Concept Developer</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasDirector</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">An Episode has a Director</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#hasEpisode</IRI>
-        <Literal datatypeIRI="&rdf;PlainLiteral">Season Has Episode</Literal>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Season has Episode</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasExecutiveProducer</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">A TV Show has an Executive Producer</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasGenre-i</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">The inverse of hasGenre - connecting a Genre with an Episode</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasLength-i</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">The inverse of hasLength - connecting a Length with an Episode</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasPerson</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Relationship between a TVShow or an Episode and a Person</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#hasSeason</IRI>
-        <Literal datatypeIRI="&rdf;PlainLiteral">TVShow has a season</Literal>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">TVShow has a season</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasSeries</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">TVShow has a season</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#AltName"/>
@@ -2697,12 +2869,97 @@ The ontology is based on the DOLCE Foundational Ontology</Literal>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#inSeason</IRI>
-        <Literal datatypeIRI="&rdf;PlainLiteral">Episode is in TV Show</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Episode is in season</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isOwnedBy</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">A Company, Distribution or Network is owned by another Company or Network. i.e. Alphabet owns Google and Google owns Google Play</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isProducedBy</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">An Episode, Season or TV Show is produced (made) by a Network</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#nextEpisode</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Relation to show the direct next Episode</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#nextEpisodes</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Shows all episodes that follow this one Achieves this through transitivity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#nextSeason</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Relation to direct next season</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#nextSeasons</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Shows all of the seasons that follow through transitivity</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#AltName"/>
         <IRI>#ofTVShow</IRI>
         <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">hasSeason-i</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ofTVShow</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Shows that a season is part of a TV show</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#owns</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Shows that a company owns a Distributor, Network or another company</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#prevEpisode</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Relation to show direct previous episode</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#prevEpisodes</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Shows all episodes that precede this one Achieves this through transitivity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#prevSeason</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Shows the direct previous episode</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#prevSeasons</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Shows all of the seasons that preced this one through transitivity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#produces</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Shows that a company produces a show, episode or season</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#spinOffOf</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">A Spinoff is a television show that has the same IP or Theme as a parent TV Show but stands alone as a seperate TV Show, This relation shows the parent show of SpinOffs, i.e. a SpinOff is a  spinOffOf a TV Show.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#spinOffs</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Relation that show a spinoff comes from another tv show</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#tVShowEpisode</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">This relatiosn relates TV Shows to Episodes of the specific TV Show through property chaining of hasSeason and hasEpisode.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#temporal-relation</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Temporal Relations linking Episodes and Seasons with preceding and following Episodes and Seasons</Literal>
     </AnnotationAssertion>
 </Ontology>
 
