@@ -23,6 +23,10 @@
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Import>http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl</Import>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">On airs</Literal>
+    </Annotation>
     <Declaration>
         <Class IRI="#ActionAdventure"/>
     </Declaration>
@@ -201,6 +205,9 @@
         <ObjectProperty IRI="#actsIn"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#airs"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#airsOn"/>
     </Declaration>
     <Declaration>
@@ -216,7 +223,10 @@
         <ObjectProperty IRI="#directorOf"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#exectutiveProducerOf"/>
+        <ObjectProperty IRI="#episodeOfTVShow"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#executiveProducerOf"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasActor"/>
@@ -297,6 +307,9 @@
         <ObjectProperty IRI="#ofTVShow"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#owns"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#prevEpisode"/>
     </Declaration>
     <Declaration>
@@ -307,6 +320,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#prevSeasons"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#produces"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#spinOffOf"/>
@@ -449,6 +465,17 @@
         <Class IRI="#People"/>
     </SubClassOf>
     <SubClassOf>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Actor could only act in movies</Literal>
+        </Annotation>
+        <Class IRI="#Actor"/>
+        <ObjectMinCardinality cardinality="0">
+            <ObjectProperty IRI="#actsIn"/>
+            <Class IRI="#Episode"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Actor"/>
         <ObjectMinCardinality cardinality="1">
             <ObjectProperty IRI="#character"/>
@@ -490,6 +517,17 @@
         <Class IRI="#People"/>
     </SubClassOf>
     <SubClassOf>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Could be a character in a movie - for future extension?</Literal>
+        </Annotation>
+        <Class IRI="#Character"/>
+        <ObjectMinCardinality cardinality="0">
+            <ObjectProperty IRI="#characterIn"/>
+            <Class IRI="#Episode"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Character"/>
         <ObjectExactCardinality cardinality="1">
             <ObjectProperty IRI="#character"/>
@@ -513,16 +551,52 @@
         <Class IRI="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#non-physical-object"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Company"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#isOwnedBy"/>
+            <Class IRI="#Company"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#ConceptDeveloper"/>
         <Class IRI="#People"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ConceptDeveloper"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#conceptDeveloperOf"/>
+            <Class IRI="#TVShow"/>
+        </ObjectMinCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Director"/>
         <Class IRI="#People"/>
     </SubClassOf>
     <SubClassOf>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Could be the director of a movie</Literal>
+        </Annotation>
+        <Class IRI="#Director"/>
+        <ObjectMinCardinality cardinality="0">
+            <ObjectProperty IRI="#directorOf"/>
+            <Class IRI="#Episode"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Distribution"/>
         <Class IRI="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#non-physical-object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Distribution"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#airs"/>
+            <ObjectUnionOf>
+                <Class IRI="#Episode"/>
+                <Class IRI="#Season"/>
+                <Class IRI="#TVShow"/>
+            </ObjectUnionOf>
+        </ObjectMinCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Distribution"/>
@@ -556,11 +630,15 @@
     <SubClassOf>
         <Class IRI="#Episode"/>
         <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#episodeOfTVShow"/>
+            <Class IRI="#TVShow"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Episode"/>
+        <ObjectAllValuesFrom>
             <ObjectProperty IRI="#inSeason"/>
-            <ObjectUnionOf>
-                <Class IRI="#Season"/>
-                <Class IRI="#TVShow"/>
-            </ObjectUnionOf>
+            <Class IRI="#Season"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -586,6 +664,20 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Episode"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#isProducedBy"/>
+            <Class IRI="#Network"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Episode"/>
+        <ObjectMinCardinality cardinality="0">
+            <ObjectProperty IRI="#nextEpisodes"/>
+            <Class IRI="#Episode"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Episode"/>
         <ObjectExactCardinality cardinality="1">
             <ObjectProperty IRI="#hasBudget"/>
             <Class IRI="#Budget"/>
@@ -600,6 +692,20 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Episode"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#nextEpisode"/>
+            <Class IRI="#Episode"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Episode"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#Description"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Episode"/>
         <DataAllValuesFrom>
             <DataProperty IRI="#Synopsis"/>
             <Datatype abbreviatedIRI="xsd:string"/>
@@ -608,6 +714,13 @@
     <SubClassOf>
         <Class IRI="#ExecutiveProducer"/>
         <Class IRI="#People"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ExecutiveProducer"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#executiveProducerOf"/>
+            <Class IRI="#TVShow"/>
+        </ObjectMinCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Fantasy"/>
@@ -730,6 +843,27 @@
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Season"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#isProducedBy"/>
+            <Class IRI="#Network"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Season"/>
+        <ObjectMinCardinality cardinality="0">
+            <ObjectProperty IRI="#nextSeasons"/>
+            <Class IRI="#Season"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Season"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#nextSeason"/>
+            <Class IRI="#Season"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#SerialDrama"/>
         <Class IRI="#Drama"/>
     </SubClassOf>
@@ -752,6 +886,13 @@
     <SubClassOf>
         <Class IRI="#SpinOff"/>
         <Class IRI="#TVShow"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SpinOff"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#spinOffOf"/>
+            <Class IRI="#TVShow"/>
+        </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Streaming"/>
@@ -783,6 +924,13 @@
     <SubClassOf>
         <Class IRI="#TVShow"/>
         <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasEpisode"/>
+            <Class IRI="#Episode"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TVShow"/>
+        <ObjectAllValuesFrom>
             <ObjectProperty IRI="#hasSeason"/>
             <Class IRI="#Season"/>
         </ObjectAllValuesFrom>
@@ -799,6 +947,13 @@
         <ObjectMinCardinality cardinality="1">
             <ObjectProperty IRI="#hasExecutiveProducer"/>
             <Class IRI="#ExecutiveProducer"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TVShow"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#isProducedBy"/>
+            <Class IRI="#Network"/>
         </ObjectMinCardinality>
     </SubClassOf>
     <SubClassOf>
@@ -1213,6 +1368,10 @@
         <ObjectProperty IRI="#involvedIn"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#airs"/>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#proper-part-of"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#airsOn"/>
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#proper-part"/>
     </SubObjectPropertyOf>
@@ -1233,7 +1392,11 @@
         <ObjectProperty IRI="#involvedIn"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#exectutiveProducerOf"/>
+        <ObjectProperty IRI="#episodeOfTVShow"/>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#proper-part-of"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#executiveProducerOf"/>
         <ObjectProperty IRI="#involvedIn"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
@@ -1341,6 +1504,10 @@
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#proper-part-of"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#owns"/>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#proper-part-of"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#prevEpisode"/>
         <ObjectProperty IRI="#temporal-relation-i"/>
     </SubObjectPropertyOf>
@@ -1355,6 +1522,10 @@
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#prevSeasons"/>
         <ObjectProperty IRI="#temporal-relation-i"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#produces"/>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#proper-part-of"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#spinOffOf"/>
@@ -1389,7 +1560,7 @@
         <ObjectProperty IRI="#hasDirector"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="#exectutiveProducerOf"/>
+        <ObjectProperty IRI="#executiveProducerOf"/>
         <ObjectProperty IRI="#hasExecutiveProducer"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
@@ -1480,7 +1651,7 @@
         <ObjectProperty IRI="#directorOf"/>
     </AsymmetricObjectProperty>
     <AsymmetricObjectProperty>
-        <ObjectProperty IRI="#exectutiveProducerOf"/>
+        <ObjectProperty IRI="#executiveProducerOf"/>
     </AsymmetricObjectProperty>
     <AsymmetricObjectProperty>
         <ObjectProperty IRI="#hasActor"/>
@@ -1553,6 +1724,10 @@
         <Class IRI="#Actor"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#airs"/>
+        <Class IRI="#Distribution"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#airsOn"/>
         <ObjectUnionOf>
             <Class IRI="#Episode"/>
@@ -1580,7 +1755,11 @@
         <Class IRI="#Director"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#exectutiveProducerOf"/>
+        <ObjectProperty IRI="#episodeOfTVShow"/>
+        <Class IRI="#Episode"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#executiveProducerOf"/>
         <Class IRI="#ExecutiveProducer"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -1695,10 +1874,7 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#ofTVShow"/>
-        <ObjectUnionOf>
-            <Class IRI="#Episode"/>
-            <Class IRI="#Season"/>
-        </ObjectUnionOf>
+        <Class IRI="#Season"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#prevEpisode"/>
@@ -1733,6 +1909,14 @@
         <Class IRI="#Episode"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#airs"/>
+        <ObjectUnionOf>
+            <Class IRI="#Episode"/>
+            <Class IRI="#Season"/>
+            <Class IRI="#TVShow"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#airsOn"/>
         <Class IRI="#Distribution"/>
     </ObjectPropertyRange>
@@ -1756,7 +1940,11 @@
         <Class IRI="#Episode"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#exectutiveProducerOf"/>
+        <ObjectProperty IRI="#episodeOfTVShow"/>
+        <Class IRI="#TVShow"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#executiveProducerOf"/>
         <Class IRI="#TVShow"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
@@ -1916,7 +2104,7 @@
             <ObjectProperty IRI="#inSeason"/>
             <ObjectProperty IRI="#ofTVShow"/>
         </ObjectPropertyChain>
-        <ObjectProperty IRI="#ofTVShow"/>
+        <ObjectProperty IRI="#episodeOfTVShow"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectPropertyChain>
