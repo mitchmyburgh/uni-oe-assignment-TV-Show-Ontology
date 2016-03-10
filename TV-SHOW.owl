@@ -198,10 +198,25 @@
         <Class IRI="#UnscriptedEntertainment"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#actsIn"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#airsOn"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#character"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#characterIn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#conceptDeveloperOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#directorOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#exectutiveProducerOf"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasActor"/>
@@ -237,6 +252,9 @@
         <ObjectProperty IRI="#hasGenre"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#hasGenre-i"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#hasLength"/>
     </Declaration>
     <Declaration>
@@ -253,6 +271,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#inSeason"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#involvedIn"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isOwnedBy"/>
@@ -286,6 +307,12 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#prevSeasons"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#spinOffOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#spinOffs"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#temporal-relation"/>
@@ -1182,12 +1209,32 @@
         <ObjectProperty IRI="#hasSeries"/>
     </EquivalentObjectProperties>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#actsIn"/>
+        <ObjectProperty IRI="#involvedIn"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#airsOn"/>
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#proper-part"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#character"/>
-        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#part"/>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#proper-part"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#characterIn"/>
+        <ObjectProperty IRI="#involvedIn"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#conceptDeveloperOf"/>
+        <ObjectProperty IRI="#involvedIn"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#directorOf"/>
+        <ObjectProperty IRI="#involvedIn"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#exectutiveProducerOf"/>
+        <ObjectProperty IRI="#involvedIn"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasActor"/>
@@ -1234,6 +1281,10 @@
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#has-quality"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasGenre-i"/>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#inherent-in"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasLength"/>
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#has-quality"/>
     </SubObjectPropertyOf>
@@ -1256,6 +1307,10 @@
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#inSeason"/>
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#proper-part-of"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#involvedIn"/>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#immediate-relation-i"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#isOwnedBy"/>
@@ -1302,6 +1357,14 @@
         <ObjectProperty IRI="#temporal-relation-i"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#spinOffOf"/>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#proper-part"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#spinOffs"/>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#proper-part-of"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#temporal-relation"/>
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#immediate-relation"/>
     </SubObjectPropertyOf>
@@ -1309,6 +1372,26 @@
         <ObjectProperty IRI="#temporal-relation-i"/>
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#immediate-relation-i"/>
     </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#actsIn"/>
+        <ObjectProperty IRI="#hasActor"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#characterIn"/>
+        <ObjectProperty IRI="#hasCharacter"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#conceptDeveloperOf"/>
+        <ObjectProperty IRI="#hasConceptDeveloper"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#directorOf"/>
+        <ObjectProperty IRI="#hasDirector"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#exectutiveProducerOf"/>
+        <ObjectProperty IRI="#hasExecutiveProducer"/>
+    </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasAirDate-i"/>
         <ObjectProperty IRI="#hasAirDate"/>
@@ -1324,6 +1407,10 @@
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasLength-i"/>
         <ObjectProperty IRI="#hasLength"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#involvedIn"/>
+        <ObjectProperty IRI="#hasPerson"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#ofTVShow"/>
@@ -1344,6 +1431,10 @@
     <InverseObjectProperties>
         <ObjectProperty IRI="#nextSeasons"/>
         <ObjectProperty IRI="#prevSeasons"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#spinOffs"/>
+        <ObjectProperty IRI="#spinOffOf"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#temporal-relation-i"/>
@@ -1377,7 +1468,28 @@
         <ObjectProperty IRI="#character"/>
     </SymmetricObjectProperty>
     <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#actsIn"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#characterIn"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#conceptDeveloperOf"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#directorOf"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#exectutiveProducerOf"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
         <ObjectProperty IRI="#hasActor"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasAirDate-i"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasBudget-i"/>
     </AsymmetricObjectProperty>
     <AsymmetricObjectProperty>
         <ObjectProperty IRI="#hasCharacter"/>
@@ -1390,6 +1502,12 @@
     </AsymmetricObjectProperty>
     <AsymmetricObjectProperty>
         <ObjectProperty IRI="#hasExecutiveProducer"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasGenre-i"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasLength-i"/>
     </AsymmetricObjectProperty>
     <AsymmetricObjectProperty>
         <ObjectProperty IRI="#hasPerson"/>
@@ -1419,14 +1537,21 @@
         <ObjectProperty IRI="#nextSeasons"/>
     </TransitiveObjectProperty>
     <TransitiveObjectProperty>
-        <ObjectProperty IRI="#ofTVShow"/>
-    </TransitiveObjectProperty>
-    <TransitiveObjectProperty>
         <ObjectProperty IRI="#prevEpisodes"/>
     </TransitiveObjectProperty>
     <TransitiveObjectProperty>
         <ObjectProperty IRI="#prevSeasons"/>
     </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#spinOffOf"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#spinOffs"/>
+    </TransitiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#actsIn"/>
+        <Class IRI="#Actor"/>
+    </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#airsOn"/>
         <ObjectUnionOf>
@@ -1443,6 +1568,22 @@
         </ObjectUnionOf>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#characterIn"/>
+        <Class IRI="#Character"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#conceptDeveloperOf"/>
+        <Class IRI="#ConceptDeveloper"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#directorOf"/>
+        <Class IRI="#Director"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#exectutiveProducerOf"/>
+        <Class IRI="#ExecutiveProducer"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasActor"/>
         <Class IRI="#Episode"/>
     </ObjectPropertyDomain>
@@ -1451,8 +1592,16 @@
         <Class IRI="#Episode"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasAirDate-i"/>
+        <Class IRI="#AirDate"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasBudget"/>
         <Class IRI="#Episode"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasBudget-i"/>
+        <Class IRI="#Budget"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasCharacter"/>
@@ -1482,8 +1631,16 @@
         <Class IRI="#TVShow"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasGenre-i"/>
+        <Class IRI="#Genre"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasLength"/>
         <Class IRI="#Episode"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasLength-i"/>
+        <Class IRI="#Length"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasPerson"/>
@@ -1499,6 +1656,10 @@
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#inSeason"/>
         <Class IRI="#Episode"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#involvedIn"/>
+        <Class IRI="#People"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isOwnedBy"/>
@@ -1534,12 +1695,43 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#ofTVShow"/>
+        <ObjectUnionOf>
+            <Class IRI="#Episode"/>
+            <Class IRI="#Season"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#prevEpisode"/>
+        <Class IRI="#Episode"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#prevEpisodes"/>
+        <Class IRI="#Episode"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#prevSeason"/>
         <Class IRI="#Season"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#prevSeasons"/>
+        <Class IRI="#Season"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#spinOffOf"/>
+        <Class IRI="#SpinOff"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#spinOffs"/>
+        <Class IRI="#TVShow"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#temporal-relation-i"/>
         <Class IRI="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#endurant"/>
     </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#actsIn"/>
+        <Class IRI="#Episode"/>
+    </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#airsOn"/>
         <Class IRI="#Distribution"/>
@@ -1552,16 +1744,40 @@
         </ObjectUnionOf>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#characterIn"/>
+        <Class IRI="#Episode"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#conceptDeveloperOf"/>
+        <Class IRI="#TVShow"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#directorOf"/>
+        <Class IRI="#Episode"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#exectutiveProducerOf"/>
+        <Class IRI="#TVShow"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#hasActor"/>
-        <Class IRI="#Character"/>
+        <Class IRI="#Actor"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasAirDate"/>
         <Class IRI="#AirDate"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasAirDate-i"/>
+        <Class IRI="#Episode"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#hasBudget"/>
         <Class IRI="#Budget"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasBudget-i"/>
+        <Class IRI="#Episode"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasCharacter"/>
@@ -1588,8 +1804,20 @@
         <Class IRI="#Genre"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasGenre-i"/>
+        <Class IRI="#TVShow"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#hasLength"/>
         <Class IRI="#Length"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasLength-i"/>
+        <Class IRI="#Episode"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPerson"/>
+        <Class IRI="#People"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasSeason"/>
@@ -1597,8 +1825,12 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#inSeason"/>
+        <Class IRI="#Season"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#involvedIn"/>
         <ObjectUnionOf>
-            <Class IRI="#Season"/>
+            <Class IRI="#Episode"/>
             <Class IRI="#TVShow"/>
         </ObjectUnionOf>
     </ObjectPropertyRange>
@@ -1634,9 +1866,37 @@
         <Class IRI="#TVShow"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#prevEpisode"/>
+        <Class IRI="#Episode"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#prevEpisodes"/>
+        <Class IRI="#Episode"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#prevSeason"/>
+        <Class IRI="#Season"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#prevSeasons"/>
+        <Class IRI="#Season"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#spinOffOf"/>
+        <Class IRI="#TVShow"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#spinOffs"/>
+        <Class IRI="#SpinOff"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#temporal-relation-i"/>
         <Class IRI="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#endurant"/>
     </ObjectPropertyRange>
+    <DisjointObjectProperties>
+        <ObjectProperty IRI="#nextEpisode"/>
+        <ObjectProperty IRI="#nextSeason"/>
+    </DisjointObjectProperties>
     <SubObjectPropertyOf>
         <ObjectPropertyChain>
             <ObjectProperty IRI="#hasSeason"/>
@@ -1650,6 +1910,13 @@
             <ObjectProperty IRI="#airsOn"/>
         </ObjectPropertyChain>
         <ObjectProperty IRI="#airsOn"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty IRI="#inSeason"/>
+            <ObjectProperty IRI="#ofTVShow"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="#ofTVShow"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectPropertyChain>

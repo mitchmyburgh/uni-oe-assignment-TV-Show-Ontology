@@ -2,7 +2,7 @@
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
     <uri id="Imports Wizard Entry" name="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl" uri="DOLCE-Lite.owl"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1457528846037" name="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl" uri="DOLCE-Lite.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1457528846037" name="http://www.semanticweb.org/mybmit001/ontologies/2016/2/tv-show-ontology" uri="TV-SHOW.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1457589073182" name="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl" uri="DOLCE-Lite.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1457589073182" name="http://www.semanticweb.org/mybmit001/ontologies/2016/2/tv-show-ontology" uri="TV-SHOW.owl"/>
     </group>
 </catalog>
